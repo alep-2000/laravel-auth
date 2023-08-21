@@ -25,8 +25,8 @@
                             <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{ old('title') }}">
                         </div>
                         <div class="class-group">
-                            <label class="control-label">Description</label>
-                            <textarea id="content" name="content" class="form-control" placeholder="Content" value="{{ old('description') }}"></textarea>
+                            <label class="control-label">Content</label>
+                            <textarea id="content" name="content" class="form-control" placeholder="Content" value="{{ old('content') }}"></textarea>
                         </div>
                         <div class="class-group my-3">
                             <button type="submit" class="btn btn-primary btn-success">Create</button>

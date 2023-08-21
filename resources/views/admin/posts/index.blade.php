@@ -26,7 +26,7 @@
                         <td> {{ $post->slug }} </td>
                         <td>
                             <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
-                            <a href="#" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="{{ route('admin.posts.create', $post->id) }}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form class="d-inline-block" action="" method="POST">
                                     @csrf
                                     @method('DELETE')
