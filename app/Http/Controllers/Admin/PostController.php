@@ -69,7 +69,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -81,7 +81,13 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $form_data = $request->all(); 
+
+        $form_data['slug'] = $post->generateSlug($form_data['title']); 
+        $post->update($form_data);
+        $post->save();
+
+        return redirect()->route('admin.posts.index');
     }
 
     /**
