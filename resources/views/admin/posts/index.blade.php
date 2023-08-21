@@ -25,9 +25,9 @@
                         <td> {{ $post->title }} </td>
                         <td> {{ $post->slug }} </td>
                         <td>
-                            <a href="#" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
+                            <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
                             <a href="#" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <form class="d-inline-block" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                            <form class="d-inline-block" action="" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm">
