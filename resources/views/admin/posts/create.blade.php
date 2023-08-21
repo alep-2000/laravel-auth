@@ -22,11 +22,14 @@
                         @csrf
                         <div class="class-group">
                             <label class="control-label">Title</label>
-                            <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{ old('title') }}">
+                            <input type="text" id="title" name="title" class="form-control @error('title')is-invalid @enderror" placeholder="Title" value="{{ old('title') }}">
+                            @error('title')
+                                <div class="text-danger"> {{ $message }} </div>
+                            @enderror
                         </div>
                         <div class="class-group">
                             <label class="control-label">Content</label>
-                            <textarea id="content" name="content" class="form-control" placeholder="Content" value="{{ old('content') }}"></textarea>
+                            <textarea id="content" name="content" class="form-control" placeholder="Content">{{ old('content') }}</textarea>
                         </div>
                         <div class="class-group my-3">
                             <button type="submit" class="btn btn-primary btn-success">Create</button>
