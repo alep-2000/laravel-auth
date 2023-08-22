@@ -23,7 +23,7 @@
                         @method('PUT')
                         <div class="class-group">
                             <label class="control-label">Title</label>
-                            <input type="text" id="title" name="title" class="form-control @error('title')is-invalid @enderror" placeholder="Title" value="{{ old('title' ?? $post->title) }}">
+                            <input type="text" id="title" name="title" class="form-control @error('title')is-invalid @enderror" placeholder="Title" value="{{ old('title') ?? $post->title }}">
                             @error('title')
                                 <div class="text-danger"> {{ $message }} </div>
                             @enderror
