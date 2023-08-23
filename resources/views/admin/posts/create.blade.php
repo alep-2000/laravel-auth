@@ -18,12 +18,19 @@
                             </ul>
                         </div>
                     @endif
-                    <form action=" {{ route('admin.posts.store') }} " method="POST">
+                    <form action=" {{ route('admin.posts.store') }} " method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="class-group">
                             <label class="control-label">Title</label>
                             <input type="text" id="title" name="title" class="form-control @error('title')is-invalid @enderror" placeholder="Title" value="{{ old('title') }}">
                             @error('title')
+                                <div class="text-danger"> {{ $message }} </div>
+                            @enderror
+                        </div>
+                        <div class="class-group">
+                            <label class="control-label">Cover Image</label>
+                            <input type="file" id="cover_image" name="cover_image" class="form-control @error('cover_image')is-invalid @enderror">
+                            @error('cover_image')
                                 <div class="text-danger"> {{ $message }} </div>
                             @enderror
                         </div>
