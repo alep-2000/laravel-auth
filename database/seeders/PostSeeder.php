@@ -23,6 +23,7 @@ class PostSeeder extends Seeder
 
             $post->title = $faker->sentence(3);
             $post->content = $faker->text();
+            $post->cover_image = $faker->imageUrl(640, 480, 'animals', true);
             $post->slug = $post->generateSlug($post->title);
 
             $post->save();

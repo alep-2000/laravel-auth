@@ -34,12 +34,12 @@
                             <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-info btn-sm"><i class="fa-solid fa-circle-info"></i></a>
                             <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
                             <form class="d-inline-block" action=" {{route('admin.posts.destroy', $post->id)}} " onsubmit="return confirm('Sei sicuro di voler cancellare questo post?')" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger btn-sm">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
